@@ -76,14 +76,6 @@ export const metadata: Metadata = {
     title: "Squish - Free Online Image Tools",
     description:
       "Convert to WebP, remove backgrounds, compress, make PDFs and more. All in your browser. Nothing uploaded.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Squish - Free Online Image Tools",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -92,7 +84,6 @@ export const metadata: Metadata = {
     title: "Squish - Free Online Image Tools",
     description:
       "Convert to WebP, remove backgrounds, compress, make PDFs and more. All in your browser. Nothing uploaded.",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,

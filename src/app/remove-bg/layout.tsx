@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     description: "AI background removal in your browser. No uploads, no sign-up. Transparent PNG output in seconds.",
     url: PAGE,
     siteName: "Squish",
-    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "Squish Background Remover" }],
     type: "website",
     locale: "en_US",
   },
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     creator: "@urudha",
     title: "Remove Image Background Free - AI Powered",
     description: "AI background removal in your browser. No uploads. Transparent PNG output.",
-    images: [`${BASE}/og-image.png`],
   },
   robots: {
     index: true,

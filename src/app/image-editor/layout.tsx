@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     description: "Crop, rotate, flip, resize and adjust photos in your browser. No software, no uploads.",
     url: PAGE,
     siteName: "Squish",
-    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "Squish Image Editor" }],
     type: "website",
     locale: "en_US",
   },
@@ -30,7 +29,6 @@ export const metadata: Metadata = {
     creator: "@urudha",
     title: "Free Online Image Editor - No Download Needed",
     description: "Crop, rotate, resize and adjust photos in your browser. No software, no uploads.",
-    images: [`${BASE}/og-image.png`],
   },
   robots: {
     index: true,

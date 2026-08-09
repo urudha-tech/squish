@@ -18,14 +18,12 @@ export const metadata: Metadata = {
     title: "Compress Image Online Free",
     description: "Reduce image file sizes by up to 80% with no visible quality loss. Batch compress. Nothing uploaded.",
     url: PAGE, siteName: "Squish",
-    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "Image Compressor" }],
     type: "website", locale: "en_US",
   },
   twitter: {
     card: "summary_large_image", site: "@urudha", creator: "@urudha",
     title: "Compress Image Online Free",
     description: "Reduce image file sizes by up to 80% with no visible quality loss. Nothing uploaded.",
-    images: [`${BASE}/og-image.png`],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 }

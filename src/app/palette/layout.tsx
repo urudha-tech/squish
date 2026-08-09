@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     description: "Extract dominant colors from any image. Get HEX, RGB and CSS variables instantly. No uploads.",
     url: PAGE,
     siteName: "Squish",
-    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "Squish Color Palette Extractor" }],
     type: "website",
     locale: "en_US",
   },
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     creator: "@urudha",
     title: "Color Palette Extractor from Image - Free Online",
     description: "Extract dominant colors from any image. HEX, RGB and CSS variables.",
-    images: [`${BASE}/og-image.png`],
   },
   robots: {
     index: true,

@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     description: "Combine JPG, PNG and other images into a PDF. Drag to reorder, custom page sizes. Nothing uploaded.",
     url: PAGE,
     siteName: "Squish",
-    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "Squish Images to PDF" }],
     type: "website",
     locale: "en_US",
   },
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     creator: "@urudha",
     title: "Images to PDF Converter - Free Online",
     description: "Combine JPG, PNG images into a PDF. Drag to reorder, custom page sizes.",
-    images: [`${BASE}/og-image.png`],
   },
   robots: {
     index: true,

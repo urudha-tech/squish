@@ -17,14 +17,12 @@ export const metadata: Metadata = {
     title: "Convert PNG to WebP Free Online",
     description: "Convert PNG to WebP in your browser. Transparency preserved. Up to 80% smaller. Nothing uploaded.",
     url: PAGE, siteName: "Squish",
-    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "PNG to WebP Converter" }],
     type: "website", locale: "en_US",
   },
   twitter: {
     card: "summary_large_image", site: "@urudha", creator: "@urudha",
     title: "Convert PNG to WebP Free Online",
     description: "Convert PNG to WebP in your browser. Transparency preserved. Nothing uploaded.",
-    images: [`${BASE}/og-image.png`],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 }

@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     description: "Extract any frame from video as JPG, PNG or WebP. Set custom intervals. No uploads.",
     url: PAGE,
     siteName: "Squish",
-    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "Squish Video Frame Extractor" }],
     type: "website",
     locale: "en_US",
   },
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     creator: "@urudha",
     title: "Video to Images - Extract Frames Online Free",
     description: "Extract frames from video as JPG, PNG or WebP. Custom intervals. No uploads.",
-    images: [`${BASE}/og-image.png`],
   },
   robots: {
     index: true,

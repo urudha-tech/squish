@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     description: "Read GPS, camera settings and timestamps from any photo. Strip metadata for privacy. Nothing uploaded.",
     url: PAGE,
     siteName: "Squish",
-    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "Squish EXIF Viewer" }],
     type: "website",
     locale: "en_US",
   },
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     creator: "@urudha",
     title: "EXIF Viewer - View and Strip Image Metadata Free",
     description: "Read GPS, camera settings from any photo. Strip metadata for privacy.",
-    images: [`${BASE}/og-image.png`],
   },
   robots: {
     index: true,

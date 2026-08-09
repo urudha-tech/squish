@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     description: "Convert JPG, PNG, HEIC and more to WebP in bulk. Reduce file size by up to 80%. Nothing uploaded.",
     url: PAGE,
     siteName: "Squish",
-    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "Squish WebP Converter" }],
     type: "website",
     locale: "en_US",
   },
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     creator: "@urudha",
     title: "WebP Converter - Free Bulk Image Conversion",
     description: "Convert JPG, PNG, HEIC and more to WebP in bulk. Nothing uploaded.",
-    images: [`${BASE}/og-image.png`],
   },
   robots: {
     index: true,

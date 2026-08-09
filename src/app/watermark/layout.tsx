@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     description: "Watermark photos in bulk with text or logo. Set position and opacity. Nothing uploaded.",
     url: PAGE,
     siteName: "Squish",
-    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "Squish Watermark Tool" }],
     type: "website",
     locale: "en_US",
   },
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     creator: "@urudha",
     title: "Add Watermark to Images Free - Batch Processing",
     description: "Watermark photos in bulk with text or logo. Set position and opacity.",
-    images: [`${BASE}/og-image.png`],
   },
   robots: {
     index: true,

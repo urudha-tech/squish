@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     description: "Turn a sequence of images into a WebM video. Set frame rate, instant download. Nothing uploaded.",
     url: PAGE,
     siteName: "Squish",
-    images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630, alt: "Squish Images to Video" }],
     type: "website",
     locale: "en_US",
   },
@@ -29,7 +28,6 @@ export const metadata: Metadata = {
     creator: "@urudha",
     title: "Images to Video Maker - Free Online Tool",
     description: "Turn images into a WebM video. Set frame rate, instant download.",
-    images: [`${BASE}/og-image.png`],
   },
   robots: {
     index: true,
