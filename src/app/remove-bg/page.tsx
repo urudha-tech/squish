@@ -8,6 +8,8 @@ import { Navbar } from "@/components/layout/Navbar"
 import { usePendingFiles } from "@/context/FilesContext"
 import { PageCard } from "@/components/layout/PageCard"
 import { ToolInfo } from "@/components/layout/ToolInfo"
+import { FAQ } from "@/components/seo/FAQ"
+import { RelatedTools } from "@/components/seo/RelatedTools"
 
 interface BgFile {
   id: string
@@ -305,6 +307,18 @@ export default function RemoveBgPage() {
             { title: "Instant Download", body: "Get a transparent PNG in seconds. Use it in design tools, presentations, e-commerce listings or anywhere else." },
           ]}
         />
+        <FAQ items={[
+          { q: "How does the AI background remover work?", a: "Squish runs an AI segmentation model entirely in your browser using WebAssembly. The model detects the subject in your image and separates it from the background — no internet connection needed after the model loads." },
+          { q: "Is my photo uploaded to a server?", a: "No. Your images never leave your device. All processing happens locally in your browser. Nothing is sent to any server." },
+          { q: "What image formats are supported?", a: "JPG, PNG, WebP, HEIC, AVIF, BMP and most other common image formats are supported as input. Output is a transparent PNG or WebP." },
+          { q: "Does it work on product photos and objects?", a: "Yes. The AI model works on portraits, product photos, animals, logos and objects. It handles complex edges like hair and fur." },
+          { q: "Why does the first run take longer?", a: "The first run downloads the AI model (~50 MB). After that the model is cached in your browser and background removal is instant on subsequent visits." },
+        ]} />
+        <RelatedTools tools={[
+          { href: "/editor",        label: "WebP Converter",  description: "Convert the result to WebP for smaller file sizes." },
+          { href: "/image-editor",  label: "Image Editor",    description: "Crop, resize and adjust the cutout image." },
+          { href: "/watermark",     label: "Add Watermark",   description: "Add a text or logo watermark to your images." },
+        ]} />
       </div>
       </PageCard>
     </>

@@ -10,6 +10,8 @@ import { Navbar } from "@/components/layout/Navbar"
 import { usePendingFiles } from "@/context/FilesContext"
 import { PageCard } from "@/components/layout/PageCard"
 import { ToolInfo } from "@/components/layout/ToolInfo"
+import { FAQ } from "@/components/seo/FAQ"
+import { RelatedTools } from "@/components/seo/RelatedTools"
 
 interface Rect { x: number; y: number; w: number; h: number }
 
@@ -537,6 +539,18 @@ export default function ImageEditorPage() {
             { title: "Private by Design", body: "Your photos stay on your device. No cloud, no server — everything happens locally in your browser." },
           ]}
         />
+        <FAQ items={[
+          { q: "What can I do with the Squish image editor?", a: "You can crop, rotate, flip, resize, adjust brightness, contrast, saturation, sharpness and hue, and apply filters like blur and grayscale — all in your browser with no software to install." },
+          { q: "Does it support HEIC and RAW files?", a: "HEIC is supported. RAW files (CR2, NEF, ARW) are not currently supported — convert RAW to JPG first using your camera software." },
+          { q: "Are my edits saved anywhere?", a: "No. All edits happen locally in your browser. Download your edited image to save it — there is no account or cloud storage." },
+          { q: "Can I undo edits?", a: "Yes. You can reset all adjustments back to the original at any point before downloading." },
+        ]} />
+        <RelatedTools tools={[
+          { href: "/editor",     label: "WebP Converter",      description: "Convert the edited image to WebP for a smaller file size." },
+          { href: "/remove-bg",  label: "Remove Background",   description: "Cut out the subject from any photo with AI." },
+          { href: "/watermark",  label: "Add Watermark",       description: "Overlay text or a logo watermark on your image." },
+          { href: "/palette",    label: "Color Palette",        description: "Extract the dominant colors from your image." },
+        ]} />
       </div>
       </PageCard>
     </>

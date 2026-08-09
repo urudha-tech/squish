@@ -7,6 +7,8 @@ import JSZip from "jszip"
 import { Navbar } from "@/components/layout/Navbar"
 import { PageCard } from "@/components/layout/PageCard"
 import { ToolInfo } from "@/components/layout/ToolInfo"
+import { FAQ } from "@/components/seo/FAQ"
+import { RelatedTools } from "@/components/seo/RelatedTools"
 
 type OutputFormat = "webp" | "png"
 
@@ -746,6 +748,17 @@ export default function VideoPage() {
             { title: "Watermark Removal", body: "Draw a region over a watermark and it will be erased from every extracted frame automatically." },
           ]}
         />
+        <FAQ items={[
+          { q: "How do I extract frames from a video?", a: "Upload your video file, set the frame extraction interval (e.g. every 1 second), choose WebP or PNG output, and click Extract. All frames download as a ZIP." },
+          { q: "What video formats are supported?", a: "MP4, WebM, MOV, AVI and other formats supported by your browser's video element are all compatible." },
+          { q: "How many frames can I extract?", a: "There is no hard limit. Extraction speed and memory usage depend on your video length and the interval you set." },
+          { q: "Is the video uploaded to a server?", a: "No. Video frame extraction runs entirely in your browser using the HTML5 Canvas API. Your video never leaves your device." },
+        ]} />
+        <RelatedTools tools={[
+          { href: "/images-to-video",  label: "Images to Video",  description: "Turn a sequence of images back into a video." },
+          { href: "/editor",           label: "WebP Converter",   description: "Convert extracted frames to WebP for smaller sizes." },
+          { href: "/image-editor",     label: "Image Editor",     description: "Edit individual frames after extraction." },
+        ]} />
       </div>
       </PageCard>
     </>

@@ -61,6 +61,20 @@ const softwareSchema = {
   publisher: { "@id": `${BASE}/#organization` },
 }
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to Remove the Background from an Image Online",
+  description: "Remove image backgrounds for free using AI directly in your browser. No uploads required.",
+  totalTime: "PT1M",
+  tool: { "@type": "HowToTool", name: "Squish Background Remover" },
+  step: [
+    { "@type": "HowToStep", position: 1, name: "Upload your image", text: "Drag and drop your photo onto the tool or click to browse. Supports JPG, PNG, WebP, and HEIC." },
+    { "@type": "HowToStep", position: 2, name: "Wait for AI processing", text: "The AI model detects the subject and removes the background. First run downloads the model (~50 MB); subsequent runs are instant." },
+    { "@type": "HowToStep", position: 3, name: "Download the result", text: "Download your image as a transparent PNG or WebP, ready to use in any design tool or platform." },
+  ],
+}
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -75,6 +89,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <JsonLd data={softwareSchema} />
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={howToSchema} />
       {children}
     </>
   )

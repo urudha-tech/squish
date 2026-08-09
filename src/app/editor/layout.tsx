@@ -61,6 +61,20 @@ const softwareSchema = {
   publisher: { "@id": `${BASE}/#organization` },
 }
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to Convert JPG to WebP Online",
+  description: "Convert JPG, PNG, HEIC and other images to WebP format for free in your browser.",
+  totalTime: "PT1M",
+  tool: { "@type": "HowToTool", name: "Squish WebP Converter" },
+  step: [
+    { "@type": "HowToStep", position: 1, name: "Upload your images", text: "Drag and drop your JPG, PNG, HEIC, or other image files onto the converter, or click to browse your files." },
+    { "@type": "HowToStep", position: 2, name: "Choose quality settings", text: "Adjust the quality slider (1–100) or enable lossless mode. Higher quality means larger file size." },
+    { "@type": "HowToStep", position: 3, name: "Convert and download", text: "Click Convert. Download individual WebP files or the entire batch as a ZIP archive." },
+  ],
+}
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -75,6 +89,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <JsonLd data={softwareSchema} />
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={howToSchema} />
       {children}
     </>
   )

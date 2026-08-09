@@ -125,6 +125,7 @@ export default function Home() {
 
   return (
     <>
+      <h1 className="sr-only">Squish — Free Online Image Tools</h1>
       <Navbar />
       <PageCard>
       <div>

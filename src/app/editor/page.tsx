@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation"
 import { X } from "lucide-react"
 import { MainWorkspace } from "@/components/layout/MainWorkspace"
 import { ToolInfo } from "@/components/layout/ToolInfo"
+import { FAQ } from "@/components/seo/FAQ"
+import { RelatedTools } from "@/components/seo/RelatedTools"
 import { usePendingFiles } from "@/context/FilesContext"
 import { PageCard } from "@/components/layout/PageCard"
 
@@ -59,6 +61,18 @@ export default function EditorPage() {
               { title: "Lossless or Lossy", body: "Choose lossless for pixel-perfect output or lossy with custom quality (1-100) for the smallest possible file size." },
             ]}
           />
+          <FAQ items={[
+            { q: "How do I convert JPG to WebP online for free?", a: "Upload your JPG files to Squish, adjust the quality slider if needed, then click Convert. Your WebP files download instantly. Nothing is ever uploaded to a server — conversion runs entirely in your browser." },
+            { q: "Is it safe to convert images with Squish?", a: "Yes. Squish processes all images locally in your browser using JavaScript and WebAssembly. Your files never leave your device — no server receives your images." },
+            { q: "How much smaller will my images be after converting to WebP?", a: "WebP is typically 25–80% smaller than JPG or PNG at equivalent visual quality. Results vary by image content: photos compress more than graphics with solid colors." },
+            { q: "Can I convert HEIC files to WebP?", a: "Yes. Squish supports HEIC (iPhone photos), AVIF, GIF, BMP, SVG, and most other image formats in addition to JPG and PNG." },
+            { q: "Can I convert multiple images at once?", a: "Yes. Drop any number of files or a ZIP archive containing images. Squish converts them all in parallel and lets you download the results as a ZIP preserving your folder structure." },
+          ]} />
+          <RelatedTools tools={[
+            { href: "/remove-bg",     label: "Remove Background",  description: "AI-powered background removal. Transparent PNG output in seconds." },
+            { href: "/pdf",           label: "Images to PDF",       description: "Combine multiple images into a single PDF document." },
+            { href: "/image-editor",  label: "Image Editor",        description: "Crop, resize, rotate, adjust brightness and apply filters." },
+          ]} />
         </div>
       </div>
     </>

@@ -10,6 +10,8 @@ import { Navbar } from "@/components/layout/Navbar"
 import { usePendingFiles } from "@/context/FilesContext"
 import { PageCard } from "@/components/layout/PageCard"
 import { ToolInfo } from "@/components/layout/ToolInfo"
+import { FAQ } from "@/components/seo/FAQ"
+import { RelatedTools } from "@/components/seo/RelatedTools"
 
 type Position = "top-left" | "top-center" | "top-right" | "center-left" | "center" | "center-right" | "bottom-left" | "bottom-center" | "bottom-right" | "tile"
 
@@ -488,6 +490,17 @@ export default function WatermarkPage() {
             { title: "No Quality Loss", body: "Watermarks are composited at full resolution. Your output images are just as sharp as the originals." },
           ]}
         />
+        <FAQ items={[
+          { q: "How do I add a watermark to my images?", a: "Upload your images, type your watermark text or upload a logo image, set the position and opacity, then click Apply. Download the watermarked images individually or as a ZIP." },
+          { q: "Can I watermark multiple images at once?", a: "Yes. Upload as many images as you need and apply the same watermark to all of them in one click." },
+          { q: "What types of watermarks can I add?", a: "Text watermarks with custom font size, color and opacity, or image watermarks using your own logo or signature file." },
+          { q: "Will watermarking reduce my image quality?", a: "No. Watermarks are composited at full resolution in your browser. The output images are the same quality as the originals." },
+        ]} />
+        <RelatedTools tools={[
+          { href: "/editor",        label: "WebP Converter",  description: "Convert watermarked images to WebP for smaller file sizes." },
+          { href: "/image-editor",  label: "Image Editor",    description: "Crop and resize images before watermarking." },
+          { href: "/pdf",           label: "Images to PDF",   description: "Combine watermarked images into a PDF document." },
+        ]} />
       </div>
       </PageCard>
     </>

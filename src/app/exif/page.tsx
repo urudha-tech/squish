@@ -10,6 +10,8 @@ import exifr from "exifr"
 import { Navbar } from "@/components/layout/Navbar"
 import { PageCard } from "@/components/layout/PageCard"
 import { ToolInfo } from "@/components/layout/ToolInfo"
+import { FAQ } from "@/components/seo/FAQ"
+import { RelatedTools } from "@/components/seo/RelatedTools"
 
 interface ExifData {
   make?: string
@@ -342,6 +344,17 @@ export default function ExifPage() {
             { title: "All Formats Supported", body: "Works with JPG, PNG, HEIC, AVIF and WebP. Reads all standard EXIF, IPTC and XMP metadata fields." },
           ]}
         />
+        <FAQ items={[
+          { q: "What is EXIF data?", a: "EXIF (Exchangeable Image File Format) is metadata automatically embedded in photos by cameras and smartphones. It includes GPS location, camera model, lens settings, shutter speed, ISO, and timestamps." },
+          { q: "Why should I remove EXIF data?", a: "EXIF data can reveal your exact location, the device you used, and when a photo was taken. Stripping it before sharing photos online protects your privacy." },
+          { q: "How do I remove EXIF metadata from a photo?", a: "Upload your image to the EXIF Viewer, view the metadata, then click Strip EXIF. Download the clean image with all metadata removed." },
+          { q: "Does removing EXIF data affect image quality?", a: "No. Stripping EXIF metadata only removes the hidden data fields — the image pixels are completely unchanged." },
+        ]} />
+        <RelatedTools tools={[
+          { href: "/editor",     label: "WebP Converter",    description: "Convert privacy-cleaned images to WebP." },
+          { href: "/remove-bg",  label: "Remove Background", description: "Remove backgrounds from your photos with AI." },
+          { href: "/watermark",  label: "Add Watermark",     description: "Add a copyright watermark before sharing." },
+        ]} />
       </div>
       </PageCard>
     </>

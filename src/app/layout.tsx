@@ -119,6 +119,25 @@ const websiteSchema = {
   publisher: { "@id": `${BASE}/#organization` },
 }
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Free Online Image Tools",
+  description: "A suite of free browser-based image tools. Nothing uploaded.",
+  url: BASE,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "WebP Converter",       url: `${BASE}/editor` },
+    { "@type": "ListItem", position: 2, name: "Remove Background",    url: `${BASE}/remove-bg` },
+    { "@type": "ListItem", position: 3, name: "Images to PDF",        url: `${BASE}/pdf` },
+    { "@type": "ListItem", position: 4, name: "Image Editor",         url: `${BASE}/image-editor` },
+    { "@type": "ListItem", position: 5, name: "Add Watermark",        url: `${BASE}/watermark` },
+    { "@type": "ListItem", position: 6, name: "EXIF Viewer",          url: `${BASE}/exif` },
+    { "@type": "ListItem", position: 7, name: "Color Palette",        url: `${BASE}/palette` },
+    { "@type": "ListItem", position: 8, name: "Video Frame Extractor",url: `${BASE}/video` },
+    { "@type": "ListItem", position: 9, name: "Images to Video",      url: `${BASE}/images-to-video` },
+  ],
+}
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -127,8 +146,10 @@ const organizationSchema = {
   url: BASE,
   logo: {
     "@type": "ImageObject",
-    url: `${BASE}/squish-logo.jpeg`,
-    contentUrl: `${BASE}/squish-logo.jpeg`,
+    url: `${BASE}/apple-touch-icon.png`,
+    contentUrl: `${BASE}/apple-touch-icon.png`,
+    width: 180,
+    height: 180,
   },
 }
 
@@ -145,6 +166,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col relative overflow-x-hidden bg-white dark:bg-neutral-950">
         <JsonLd data={websiteSchema} />
         <JsonLd data={organizationSchema} />
+        <JsonLd data={itemListSchema} />
         <ProcessingProvider>
           <RibbonBackground />
           <div className="relative z-10 min-h-full flex flex-col flex-1">

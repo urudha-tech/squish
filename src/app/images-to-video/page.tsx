@@ -6,6 +6,8 @@ import { Navbar } from "@/components/layout/Navbar"
 import { usePendingFiles } from "@/context/FilesContext"
 import { PageCard } from "@/components/layout/PageCard"
 import { ToolInfo } from "@/components/layout/ToolInfo"
+import { FAQ } from "@/components/seo/FAQ"
+import { RelatedTools } from "@/components/seo/RelatedTools"
 
 interface ImageItem {
   id: string
@@ -352,6 +354,17 @@ export default function ImagesToVideoPage() {
             { title: "Instant WebM Output", body: "Output is WebM, supported by all modern browsers and video editors. Download and use immediately." },
           ]}
         />
+        <FAQ items={[
+          { q: "How do I turn images into a video?", a: "Upload your images in the order you want them to appear, set the frame rate, and click Generate. Your WebM video downloads instantly." },
+          { q: "What video format does it output?", a: "WebM — an open format supported by all modern browsers, YouTube, and most video editors. Convert to MP4 with a video converter if needed." },
+          { q: "Can I control the video speed?", a: "Yes. Set any frame rate from 1 fps (slow slideshow) to 60 fps (smooth animation). Higher fps means faster, smoother video." },
+          { q: "Is there a limit on the number of images?", a: "No hard limit. The more images you add, the longer the video. Generation happens in real time at 1× speed, so a 30-second video takes ~30 seconds to generate." },
+        ]} />
+        <RelatedTools tools={[
+          { href: "/video",    label: "Video Frame Extractor", description: "Extract individual frames from a video file." },
+          { href: "/editor",   label: "WebP Converter",        description: "Convert your images to WebP before sequencing." },
+          { href: "/pdf",      label: "Images to PDF",         description: "Combine images into a PDF document instead." },
+        ]} />
       </div>
       </PageCard>
     </>

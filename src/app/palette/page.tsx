@@ -9,6 +9,8 @@ import { Navbar } from "@/components/layout/Navbar"
 import { usePendingFiles } from "@/context/FilesContext"
 import { PageCard } from "@/components/layout/PageCard"
 import { ToolInfo } from "@/components/layout/ToolInfo"
+import { FAQ } from "@/components/seo/FAQ"
+import { RelatedTools } from "@/components/seo/RelatedTools"
 
 interface ColorSwatch {
   hex: string
@@ -354,6 +356,17 @@ export default function PalettePage() {
             { title: "Instant and Free", body: "No account, no upload, no wait. Drop an image and get your palette in under a second, entirely in your browser." },
           ]}
         />
+        <FAQ items={[
+          { q: "What is a color palette extractor?", a: "A color palette extractor analyzes an image and identifies the dominant colors. Squish returns HEX, RGB and HSL values you can copy directly into design tools or code." },
+          { q: "How many colors does it extract?", a: "Squish extracts up to 12 dominant colors per image, ranked by visual prominence using perceptual clustering." },
+          { q: "Can I use this for brand color matching?", a: "Yes. Upload a logo or brand image and Squish returns the exact HEX codes used. Use them to match colors in Figma, CSS or any design tool." },
+          { q: "What image formats are supported?", a: "JPG, PNG, WebP, GIF, HEIC, AVIF and BMP are all supported." },
+        ]} />
+        <RelatedTools tools={[
+          { href: "/image-editor",  label: "Image Editor",    description: "Adjust colors and apply filters to your image." },
+          { href: "/editor",        label: "WebP Converter",  description: "Convert images to WebP after extracting colors." },
+          { href: "/remove-bg",     label: "Remove Background", description: "Isolate the subject before extracting its colors." },
+        ]} />
       </div>
       </PageCard>
     </>

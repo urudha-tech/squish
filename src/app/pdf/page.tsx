@@ -9,6 +9,8 @@ import { Navbar } from "@/components/layout/Navbar"
 import { usePendingFiles } from "@/context/FilesContext"
 import { PageCard } from "@/components/layout/PageCard"
 import { ToolInfo } from "@/components/layout/ToolInfo"
+import { FAQ } from "@/components/seo/FAQ"
+import { RelatedTools } from "@/components/seo/RelatedTools"
 
 interface PDFFile {
   id: string
@@ -278,6 +280,18 @@ export default function PDFPage() {
             { title: "Client-Side Only", body: "PDF generation runs in your browser using pdf-lib. No image data is ever sent to a server. Works offline once loaded." },
           ]}
         />
+        <FAQ items={[
+          { q: "How do I combine images into a PDF?", a: "Upload your images to the tool, drag to reorder them if needed, choose a page size, and click Convert. Your PDF downloads instantly — everything runs in your browser." },
+          { q: "What image formats can I use?", a: "JPG, PNG, WebP, GIF, BMP, HEIC, AVIF and SVG are all supported." },
+          { q: "Can I control the PDF page size?", a: "Yes. Choose Fit (preserves original image dimensions), A4 (210×297 mm), or US Letter (8.5×11 in)." },
+          { q: "Is there a limit on the number of images?", a: "No hard limit. The tool handles as many images as your browser's memory allows. For very large batches (100+ images), convert in smaller groups." },
+          { q: "Are my images uploaded anywhere?", a: "No. PDF generation runs entirely in your browser using pdf-lib. Your images never leave your device." },
+        ]} />
+        <RelatedTools tools={[
+          { href: "/editor",        label: "WebP Converter",  description: "Convert images to WebP before adding them to your PDF." },
+          { href: "/image-editor",  label: "Image Editor",    description: "Crop and resize images before combining into a PDF." },
+          { href: "/watermark",     label: "Add Watermark",   description: "Watermark your images before exporting as PDF." },
+        ]} />
       </div>
       </PageCard>
     </>
