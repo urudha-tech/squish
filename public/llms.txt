@@ -1,0 +1,30 @@
+# Squish
+
+> Free online image tools that run entirely in your browser. No uploads, no sign-up, no server processing.
+
+Squish is a suite of client-side image utilities available at https://squish.urudha.com. All processing happens locally in the user's browser using WebAssembly and JavaScript — no image data is ever sent to a server.
+
+## Tools
+
+- [WebP Converter](https://squish.urudha.com/editor): Convert JPG, PNG, HEIC, AVIF, GIF, BMP and other formats to WebP. Bulk conversion with quality control and ZIP download.
+- [Remove Background](https://squish.urudha.com/remove-bg): AI-powered background removal running entirely in-browser via ONNX/WebAssembly.
+- [Images to PDF](https://squish.urudha.com/pdf): Combine multiple images into a single PDF with A4, Letter, or fit-to-image sizing.
+- [Image Editor](https://squish.urudha.com/image-editor): Crop, resize, rotate, flip, adjust brightness/contrast/saturation, apply filters.
+- [Add Watermark](https://squish.urudha.com/watermark): Add text or image watermarks to photos in bulk.
+- [EXIF Viewer](https://squish.urudha.com/exif): Read and strip EXIF metadata from images for privacy.
+- [Color Palette](https://squish.urudha.com/palette): Extract dominant colors from any image.
+- [Video to WebP](https://squish.urudha.com/video): Convert short video clips to animated WebP.
+- [Images to Video](https://squish.urudha.com/images-to-video): Combine images into a video slideshow.
+
+## Key facts
+
+- All tools are free with no usage limits
+- No account or sign-up required
+- Images never leave the user's device
+- Works offline once the page has loaded
+- Built with Next.js, Sharp (server-side conversion), and WebAssembly
+
+## Contact
+
+Site: https://squish.urudha.com
+Creator: Urudha (https://urudha.com)
