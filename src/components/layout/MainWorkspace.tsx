@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { useState, useRef, useCallback, useEffect } from "react"
 import { Zap } from "lucide-react"
@@ -31,8 +31,6 @@ export function MainWorkspace({ initialFiles, onClose }: MainWorkspaceProps) {
   const [options, setOptions] = useState<ConversionOptions>(DEFAULT_OPTIONS)
   const [isDownloading, setIsDownloading] = useState(false)
   const [ingestError, setIngestError] = useState<string | null>(null)
-  // Files staged but not yet converted - waiting for user to confirm settings
-  const [staged, setStaged] = useState<IngestedFile[]>([])
 
   const { state, submit, reset, resubmitAll, hasFiles, getOriginalUrl, completed, total, isDone, progress } =
     useConversionQueue()
@@ -49,7 +47,9 @@ export function MainWorkspace({ initialFiles, onClose }: MainWorkspaceProps) {
     if (!initialFiles || initialFiles.length === 0 || startedRef.current) return
     startedRef.current = true
     ingest(initialFiles).then((ingested) => {
-      if (ingested.length > 0) setStaged(ingested)
+      if (ingested.length > 0) {
+        submit(ingested, optionsRef.current)
+      }
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -87,22 +87,10 @@ export function MainWorkspace({ initialFiles, onClose }: MainWorkspaceProps) {
         setIngestError("No supported images found. The file may contain unsupported formats or be empty.")
         return
       }
-      // If we already have results, convert immediately; otherwise stage for settings review
-      if (total > 0) {
-        submit(ingested, optionsRef.current)
-      } else {
-        setStaged(ingested)
-      }
+      submit(ingested, optionsRef.current)
     },
-    [ingest, total, submit]
+    [ingest, submit]
   )
-
-  const handleConfirm = useCallback(() => {
-    if (staged.length === 0) return
-    const toSubmit = staged
-    setStaged([])
-    submit(toSubmit, optionsRef.current)
-  }, [staged, submit])
 
   const handleDownload = useCallback(
     (job: ConversionJob) => {
@@ -123,7 +111,6 @@ export function MainWorkspace({ initialFiles, onClose }: MainWorkspaceProps) {
 
   const handleReset = useCallback(() => {
     reset()
-    setStaged([])
     startedRef.current = false
   }, [reset])
 
@@ -131,7 +118,7 @@ export function MainWorkspace({ initialFiles, onClose }: MainWorkspaceProps) {
     state.startedAt && state.completedAt ? state.completedAt - state.startedAt : null
 
   // No files yet - dropzone only
-  if (total === 0 && staged.length === 0) {
+  if (total === 0) {
     return (
       <div className="mx-auto max-w-2xl py-4 pb-16 sm:py-6 space-y-3">
         <UploadDropzone onFiles={handleFiles} multiple allowFolder />
@@ -140,40 +127,6 @@ export function MainWorkspace({ initialFiles, onClose }: MainWorkspaceProps) {
             {ingestError}
           </p>
         )}
-      </div>
-    )
-  }
-
-  // Files staged - show settings confirmation before converting
-  if (staged.length > 0 && total === 0) {
-    return (
-      <div className="mx-auto max-w-lg py-4 pb-16 space-y-3 sm:py-6 sm:space-y-4">
-        <div className="rounded-xl border border-neutral-100 dark:border-neutral-800 px-4 py-3 sm:px-5 sm:py-4">
-          <p className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
-            {staged.length} file{staged.length !== 1 ? "s" : ""} ready
-          </p>
-          <p className="mt-0.5 text-xs text-neutral-400">
-            Set your options below, then start converting.
-          </p>
-        </div>
-
-        <ConversionSettings options={options} onChange={setOptions} />
-
-        <div className="flex gap-2">
-          <button
-            onClick={handleConfirm}
-            className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-neutral-900 py-3 text-sm font-medium text-white hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 transition-colors"
-          >
-            <Zap className="h-4 w-4" />
-            Convert {staged.length} file{staged.length !== 1 ? "s" : ""}
-          </button>
-          <button
-            onClick={handleReset}
-            className="rounded-xl border border-neutral-200 px-4 py-3 text-sm text-neutral-500 hover:border-neutral-300 hover:text-neutral-700 dark:border-neutral-700 dark:hover:border-neutral-600 dark:hover:text-neutral-300 transition-colors"
-          >
-            Cancel
-          </button>
-        </div>
       </div>
     )
   }

@@ -38,7 +38,7 @@ export function DownloadCard({ jobs, onDownloadAll, isDownloading }: DownloadCar
           type="button"
           onClick={onDownloadAll}
           disabled={isDownloading}
-          className="flex items-center gap-2 rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-700 disabled:opacity-50 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
+          className="flex items-center gap-2 rounded-xl bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-neutral-800 hover:shadow hover:-translate-y-0.5 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none disabled:-translate-y-0 disabled:scale-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
         >
           {completed.length === 1 ? <Download className="h-4 w-4" /> : <Archive className="h-4 w-4" />}
           {isDownloading ? "Preparing…" : completed.length === 1 ? "Download" : "Download ZIP"}
