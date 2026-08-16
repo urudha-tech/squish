@@ -19,14 +19,17 @@ export async function POST(req: NextRequest) {
     const zipBuffer = await packageToZip(body.files, body.zipName ?? "converted.zip")
     const zipName = body.zipName ?? "converted.zip"
 
-    return new NextResponse(zipBuffer.buffer as ArrayBuffer, {
-      status: 200,
-      headers: {
-        "Content-Type": "application/zip",
-        "Content-Disposition": `attachment; filename="${zipName}"`,
-        "Content-Length": String(zipBuffer.byteLength),
-      },
-    })
+    return new NextResponse(
+      zipBuffer.buffer.slice(zipBuffer.byteOffset, zipBuffer.byteOffset + zipBuffer.byteLength) as ArrayBuffer,
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "application/zip",
+          "Content-Disposition": `attachment; filename="${zipName}"`,
+          "Content-Length": String(zipBuffer.byteLength),
+        },
+      }
+    )
   } catch {
     return NextResponse.json(
       { ok: false, errorCode: "CONVERSION_FAILED", message: "Failed to create ZIP." },

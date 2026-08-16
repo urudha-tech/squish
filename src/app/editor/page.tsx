@@ -44,14 +44,8 @@ export default function EditorPage() {
 
       {/* Workspace */}
       <PageCard>
-        <div className="px-4 sm:px-6">
+        <div className="px-4 sm:px-6 pb-10">
           <MainWorkspace initialFiles={pendingFiles} onClose={handleClose} />
-        </div>
-      </PageCard>
-
-      {/* SEO content below workspace */}
-      <div className="mx-3 sm:mx-[18%] mb-6">
-        <div className="px-4 sm:px-6">
           <ToolInfo
             heading="Free Online WebP Converter"
             description="Squish converts JPG, PNG, HEIC, AVIF and GIF images to WebP in bulk — directly in your browser. WebP files are 25-80% smaller than JPEG with the same visual quality, making them ideal for websites and apps. No uploads, no account, no limits."
@@ -74,7 +68,7 @@ export default function EditorPage() {
             { href: "/image-editor",  label: "Image Editor",        description: "Crop, resize, rotate, adjust brightness and apply filters." },
           ]} />
         </div>
-      </div>
+      </PageCard>
     </>
   )
 }
