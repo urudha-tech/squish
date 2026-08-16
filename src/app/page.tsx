@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { useState, useCallback, useRef } from "react"
 import { useRouter } from "next/navigation"
@@ -229,7 +229,7 @@ export default function Home() {
                 <button
                   key={href}
                   onClick={() => pick(href)}
-                  className="group flex items-start gap-3 rounded-xl border border-neutral-100 p-4 text-left transition-all hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:border-neutral-600 dark:hover:bg-neutral-900"
+                  className="group flex items-start gap-3 rounded-xl border border-neutral-200 dark:border-neutral-800 p-4 text-left shadow-sm transition-all duration-200 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md hover:bg-neutral-50/50 dark:hover:bg-neutral-900/50 hover:-translate-y-0.5 active:scale-[0.98]"
                 >
                   <div className="mt-0.5 shrink-0 rounded-lg bg-neutral-100 p-2 transition-colors group-hover:bg-neutral-200 dark:bg-neutral-800 dark:group-hover:bg-neutral-700">
                     <Icon className="h-4 w-4 text-neutral-600 dark:text-neutral-400" />
@@ -264,7 +264,7 @@ export default function Home() {
                 <a
                   key={href}
                   href={href}
-                  className="group flex items-start gap-3 rounded-xl border border-neutral-100 p-4 transition-all hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:border-neutral-600 dark:hover:bg-neutral-900"
+                  className="group flex items-start gap-3 rounded-xl border border-neutral-200 dark:border-neutral-800 p-4 shadow-sm transition-all duration-200 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-md hover:bg-neutral-50/50 dark:hover:bg-neutral-900/50 hover:-translate-y-0.5 active:scale-[0.98]"
                 >
                   <div className="mt-0.5 shrink-0 rounded-lg bg-neutral-100 p-2 transition-colors group-hover:bg-neutral-200 dark:bg-neutral-800 dark:group-hover:bg-neutral-700">
                     <Icon className="h-4 w-4 text-neutral-600 dark:text-neutral-400" />
